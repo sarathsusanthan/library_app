@@ -45,6 +45,14 @@ footer {
   background-color: rgb(255, 0, 0);
   color: white;
 }
+/* update image button */
+#update{
+  color: black;
+}
+#update:hover{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.692);
+}
 /* login form styles */
 #log{
   margin-top: 12%; 

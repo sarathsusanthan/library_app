@@ -42,7 +42,7 @@ function check(){
     var nam=document.getElementById("nam");
     var born=document.getElementById("born");
     var gen=document.getElementById("gen");
-    var works=document.getElementById("works");
+    
     var pic=document.getElementById("pic");
     var er=document.getElementById("er");
 if(nam.value.trim()==""||born.value.trim()==""||gen.value.trim()==""){
@@ -53,14 +53,10 @@ if(nam.value.trim()==""||born.value.trim()==""||gen.value.trim()==""){
         born.style.border="2px solid red";
         gen.style.border="2px solid red";
     }
-    if(works.value.trim()==""){er.innerHTML="Fields can not be empty";
-                    er.style.color="red"; 
-                    works.style.border="2px solid red"; return false;}
+  
                     return false;
 }
-if(works.value.trim()==""){er.innerHTML="Fields can not be empty";
-er.style.color="red"; 
-works.style.border="2px solid red"; return false;}
+
     if(nam.value.trim()==""){ nam.style.border="2px solid red"; return false;}
 if(born.value.trim()==""){ born.style.border="2px solid red"; return false;}
 if(gen.value.trim()==""){gen.style.border="2px solid red"; return false;}
@@ -81,9 +77,9 @@ if(born.value.trim()!=""){  born.style.border="";}
 else{born.style.border="2px solid red"}
 if(gen.value.trim()!=""){  gen.style.border="";}
 else{gen.style.border="2px solid red"}
-if(works.value.trim()!=""){  works.style.border="";}
-else{works.style.border="2px solid red"}
-if(nam.value.trim()!=""&&born.value.trim()!=""&&gen.value.trim()!=""&&works.value.trim()!=""){
+
+
+if(nam.value.trim()!=""&&born.value.trim()!=""&&gen.value.trim()!=""){
     er.innerHTML="";
 }
 }
@@ -92,6 +88,7 @@ function  logcheck(){
     var user=document.getElementById("user").value;
     var pwd= document.getElementById("pwd").value;
     var loger=document.getElementById("loger");
+    var email=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(user.trim()==""||pwd.trim()==""){
         loger.innerHTML="Fields Can Not Be Empty";
         loger.style.color="red";
@@ -100,11 +97,11 @@ function  logcheck(){
     }
     if(user.trim()!=""&&pwd.trim()!=""){
         loger.innerHTML="";
-        if(user=="admin" && pwd=="1234"){
+        if(email.test(user)||user=="admin"){
             return true;
         }
         else{
-            loger.innerHTML="User name/Password is incorrect";
+            loger.innerHTML="Please enter a valid email";
             loger.style.color="red";
             loger.style.backgroundColor="black";
             return false;
@@ -220,9 +217,16 @@ function cofmcheck(){
         }
     }
 }
-function msg(){
-    if(n==1&&e==1&&p==1&&r==1){
-        alert("You are successfully created an account.Login to continue");
-        
+
+// update image form validation
+function imgchecker(){
+    var image=document.getElementById('upimage');
+    if(image.files.length==0){
+        alert("choose an image");
+        return false;
+
+    }
+    else{
+        return true;
     }
 }

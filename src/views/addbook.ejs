@@ -76,7 +76,7 @@
         <div style="background-color: rgba(0, 0, 0, 0);"  class="panel-body">
           <!--/add book form-->
           <div style="background-color: rgba(0, 0, 0, 0);"  class="row container">    
-           <form style="border: 2px solid black; margin-left: 30%;margin-right: 34%;margin-top: 4%; background-color: rgba(13, 13, 14, 0.671);padding-bottom: 4%;padding-top: 3%;text-align: center;" method="GET" action="#" onsubmit="return validate()"><br>
+           <form style="border: 2px solid black; margin-left: 30%;margin-right: 34%;margin-top: 4%; background-color: rgba(13, 13, 14, 0.671);padding-bottom: 4%;padding-top: 3%;text-align: center;" method="POST" action="/adminbooks/add" enctype="multipart/form-data" onsubmit="return validate()"><br>
                
               <p style="color:black;"><b style="color: white;">Title:</b>   <input onkeyup="key()" id="title" style="margin-left: 15px;" type="text" name="title"></p>   <br><br>
               <p style="color: black;"><b style="color: white;">Author:</b>  <input onkeyup="key()" id="author" type="text" name="author"></p><br><br>
